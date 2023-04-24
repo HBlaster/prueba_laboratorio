@@ -26,6 +26,7 @@ $query = mysqli_query($con, $sql);
             <div class="col-md-8 mx-auto">
                 <div style="text-align: center;">
                     <h1>Software para laboratorio</h1>
+                    <h2>clientes</h2>
                 </div>
                 <table class="table">
                     <thead class="table-success table-striped">
