@@ -35,7 +35,7 @@ $query_one = mysqli_query($con, $sql_one);
     <div class="container mt-5">
         <div class="row">
 
-            <div class="col-md-3" style="margin-right: 50px;">
+            <div class="col-md-3" style="margin-right: 60px;">
                 <h1 style=" font-size:20px;">Estudios Disponibles</h1>
                 <form action="insertar.php?id_usuario=<?php echo $id ?>" method="POST">
                     <table class="table">
@@ -76,6 +76,7 @@ $query_one = mysqli_query($con, $sql_one);
                             <th>Estudio</th>
                             <th>Precio Unitario</th>
                             <th></th>
+                            
                         </tr>
                     </thead>
 
@@ -90,6 +91,7 @@ $query_one = mysqli_query($con, $sql_one);
                                 <th><?php echo $row_one['Nombre_del_Paciente'] ?></th>
                                 <th><?php echo $row_one['Estudio'] ?></th>
                                 <th><?php echo $row_one['Precio_Unitario'] ?></th>
+                                <th><a href="delete.php?folio=<?php echo $row_one['Folio'] ?>&precio=<?php echo $row_one['Precio_Unitario'] ?>&id_usuario=<?php echo $id?>" class="btn btn-danger">Eliminar</a></th>  
 
                             </tr>
                         <?php
@@ -100,6 +102,7 @@ $query_one = mysqli_query($con, $sql_one);
                             <th></th>
                             <th></th>
                             <th>Total: <?php echo $total; ?></th>
+                            <th></th>
                         </tr>
                     </tbody>
                 </table>
