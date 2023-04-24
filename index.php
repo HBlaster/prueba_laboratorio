@@ -30,7 +30,6 @@
                                         <th>Nombre Paciente</th>
                                         <th>Email</th>
                                         <th></th>
-                                        <th></th>
                                     </tr>
                                 </thead>
 
