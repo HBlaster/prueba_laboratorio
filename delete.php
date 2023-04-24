@@ -2,13 +2,14 @@
     include("conexion.php");
     $con=conectar();
 
-$folio=$_GET['folio'];
-$precio_producto = $_GET['precio'];
+$id_orden=$_GET['id_orden'];
 $id_usuario = $_GET['id_usuario'];
 
+echo ($id_orden);
+echo ($id_usuario);
+
 $sql="DELETE FROM ordenes_partidas 
-WHERE venta = '$folio' AND precioUnitario = '$precio_producto'
-";
+WHERE id = '$id_orden' ";
 $query= mysqli_query($con,$sql);
 
 if($query){

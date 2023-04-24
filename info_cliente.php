@@ -8,7 +8,7 @@ $query = mysqli_query($con, $sql);
 
 //Consulta para obtener datos del paciente
 $id = $_GET['id'];
-$sql_one = "SELECT ordenes.folio AS 'Folio', clientes.nombre AS 'Nombre_del_Paciente', estudios.descrip AS 'Estudio', ordenes_partidas.precioUnitario AS 'Precio_Unitario' 
+$sql_one = "SELECT ordenes.folio AS 'Folio', clientes.nombre AS 'Nombre_del_Paciente', estudios.descrip AS 'Estudio', ordenes_partidas.precioUnitario AS 'Precio_Unitario', ordenes_partidas.id AS 'id_orden_partida' 
 FROM ordenes 
 INNER JOIN clientes ON ordenes.cliente = clientes.clave_cli 
 INNER JOIN ordenes_partidas ON ordenes.folio = ordenes_partidas.venta 
@@ -71,6 +71,7 @@ $query_one = mysqli_query($con, $sql_one);
                 <table class="table">
                     <thead class="table-success table-striped">
                         <tr>
+                            <th>id</th>
                             <th>Folio</th>
                             <th>Nombre del paciente</th>
                             <th>Estudio</th>
@@ -87,11 +88,12 @@ $query_one = mysqli_query($con, $sql_one);
                             $total += $row_one['Precio_Unitario'];
                         ?>
                             <tr>
+                                <th><?php echo $row_one['id_orden_partida'] ?></th>
                                 <th><?php echo $row_one['Folio'] ?></th>
                                 <th><?php echo $row_one['Nombre_del_Paciente'] ?></th>
                                 <th><?php echo $row_one['Estudio'] ?></th>
                                 <th><?php echo $row_one['Precio_Unitario'] ?></th>
-                                <th><a href="delete.php?folio=<?php echo $row_one['Folio'] ?>&precio=<?php echo $row_one['Precio_Unitario'] ?>&id_usuario=<?php echo $id?>" class="btn btn-danger">Eliminar</a></th>  
+                                <th><a href="delete.php?id_orden=<?php echo $row_one['id_orden_partida'] ?>&id_usuario=<?php echo $id?>" class="btn btn-danger">Eliminar</a></th>  
 
                             </tr>
                         <?php
