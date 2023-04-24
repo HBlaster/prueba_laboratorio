@@ -8,6 +8,7 @@ $query = mysqli_query($con, $sql);
 
 //Consulta para obtener datos del paciente
 $id = $_GET['id'];
+$clave_cli = $_GET['clave_cli'];
 $sql_one = "SELECT ordenes.folio AS 'Folio', clientes.nombre AS 'Nombre_del_Paciente', estudios.descrip AS 'Estudio', ordenes_partidas.precioUnitario AS 'Precio_Unitario', ordenes_partidas.id AS 'id_orden_partida' 
 FROM ordenes 
 INNER JOIN clientes ON ordenes.cliente = clientes.clave_cli 
@@ -37,7 +38,7 @@ $query_one = mysqli_query($con, $sql_one);
 
             <div class="col-md-3" style="margin-right: 60px;">
                 <h1 style=" font-size:20px;">Estudios Disponibles</h1>
-                <form action="insertar.php?id_usuario=<?php echo $id ?>" method="POST">
+                <!-- <form action="insertar.php?id_usuario=<?php echo $id ?>&clave_cli=<?php echo $clave_cli?>" method="POST"> -->
                     <table class="table">
                         <thead class="table-success table-striped">
                             <tr>
@@ -56,18 +57,18 @@ $query_one = mysqli_query($con, $sql_one);
                                     <th><?php echo $row['clave_art'] ?></th>
                                     <th><?php echo $row['descrip'] ?></th>
                                     <th><?php echo $row['precio'] ?></th>
-                                    <th><input type="submit" class="btn btn-primary" value="Agregar"></th>
+                                    <th><a class="btn btn-primary" href="insertar.php?id_usuario=<?php echo $id ?>&clave_cli=<?php echo $clave_cli?>&clave_art=<?php echo $row['clave_art']?>" >Agregar</a></th>
                                 </tr>
                             <?php
                             }
                             ?>
                         </tbody>
                     </table>
-                </form>
+                <!-- </form> -->
             </div>
 
             <div class="col-md-8">
-                <h1 style="font-size: 20px;">Estudios del cliente</h1>
+                <h1 style="font-size: 20px;">Estudios del Cliente</h1>
                 <table class="table">
                     <thead class="table-success table-striped">
                         <tr>

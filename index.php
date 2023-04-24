@@ -47,7 +47,7 @@ $query = mysqli_query($con, $sql);
                                 <th><?php echo $row['clave_cli'] ?></th>
                                 <th><?php echo $row['nombre'] ?></th>
                                 <th><?php echo $row['email'] ?></th>
-                                <th><a href="info_cliente.php?id=<?php echo $row['id'] ?>" class="btn btn-info">Seleccionar</a></th>
+                                <th><a href="info_cliente.php?id=<?php echo $row['id'] ?>&clave_cli=<?php echo $row['clave_cli']?>" class="btn btn-info">Seleccionar</a></th>
                             </tr>
                         <?php
                         }

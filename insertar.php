@@ -3,15 +3,16 @@
     $con=conectar();
 
 $id_usuario=$_GET['id_usuario'];
-$id_producto = $_POST['clave_art'];
+$clave_cli=$_GET['clave_cli'];
+$id_producto = $_GET['clave_art'];
 
+echo($id_producto);
+$sql = "INSERT INTO ordenes (folio, cliente, precio)
+VALUES ()";
 
-$sql="INSERT INTO alumno VALUES('$cod_estudiante','$dni','$nombres','$apellidos')";
-$query= mysqli_query($con,$sql);
-
-if($query){
-    Header("Location: alumno.php");
+// if($query){
+//     Header("Location: info_cliente.php?id=$id_usuario");
     
-}else {
-}
+// }else {
+// }
 ?>
