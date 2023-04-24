@@ -25,7 +25,7 @@ $query=mysqli_query($con,$sql);
                     <div class="row"> 
                         
                         <div class="col-md-3">
-                            <h1>Estudios</h1>
+                            <h1 style=" font-size:20px;" >Estudios Disponibles</h1>
                                 <form action="insertar.php" method="POST">
                                 <table class="table" >
                                 <thead class="table-success table-striped" >
@@ -45,29 +45,25 @@ $query=mysqli_query($con,$sql);
                                                 <th><?php  echo $row['id']?></th>
                                                 <th><?php  echo $row['descrip']?></th>
                                                 <th><?php  echo $row['precio']?></th>  
-                                                <th><a  class="btn btn-info">Editar</a></th>                                        
+                                                <th><input type="submit" class="btn btn-primary" value="Agregar"></th>                                        
                                             </tr>
                                         <?php 
                                             }
                                         ?>
                                 </tbody>
                             </table>
-
-                                    
-                                    
-                                    <input type="submit" class="btn btn-primary">
                                 </form>
                         </div>
 
                         <div class="col-md-8">
+                            <h1 style="font-size: 20px;">Estudios del cliente</h1>
                             <table class="table" >
                                 <thead class="table-success table-striped" >
                                     <tr>
-                                        <th>Codigo</th>
-                                        <th>Dni</th>
-                                        <th>Nombres</th>
-                                        <th>pellidos</th>
-                                        <th></th>
+                                        <th>Folio</th>
+                                        <th>Nombre del paciente</th>
+                                        <th>Estudio</th>
+                                        <th>Precio Unitario</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -77,12 +73,11 @@ $query=mysqli_query($con,$sql);
                                             while($row=mysqli_fetch_array($query)){
                                         ?>
                                             <tr>
-                                                <th><?php  echo $row['cod_estudiante']?></th>
-                                                <th><?php  echo $row['dni']?></th>
-                                                <th><?php  echo $row['nombres']?></th>
-                                                <th><?php  echo $row['apellidos']?></th>    
-                                                <th><a href="actualizar.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-info">Editar</a></th>
-                                                <th><a href="delete.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>    
+                                                <th></th>                                       
                                             </tr>
                                         <?php 
                                             }
